@@ -2,7 +2,7 @@
 
 # Функция для вывода списка пользователей
 list_users() {
-    awk -F: '{ print $1, $6 }' /etc/passwd | sort -k1
+    cut -d: -f1,6 /etc/passwd | sort
 }
 
 # Функция для вывода списка процессов
